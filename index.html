@@ -396,19 +396,54 @@ function build(){
     env.gain.cancelScheduledValues(t); env.gain.setValueAtTime(env.gain.value,t); env.gain.linearRampToValueAtTime(v,t+up); env.gain.setValueAtTime(v,t+up+hold); env.gain.linearRampToValueAtTime(.004,t+up+hold+2.5);
     os.frequency.setValueAtTime(40+Math.random()*14,t);
     timers.push(setTimeout(chirp,(up+hold+3+Math.random()*5)*1000));}
-  // Lyre (mode dorien)
-  const bus=ac.createGain(); bus.gain.value=.5; bus.connect(master);
-  const dl=ac.createDelay(1); dl.delayTime.value=.42; const fb=ac.createGain(); fb.gain.value=.38; const wet=ac.createGain(); wet.gain.value=.35;
-  bus.connect(dl); dl.connect(fb); fb.connect(dl); dl.connect(wet); wet.connect(master);
-  const scale=[146.83,164.81,174.61,196,220,246.94,261.63,293.66,329.63,349.23,392,440];
-  function pluck(f,t){[[1,'triangle',.22],[2,'sine',.07],[3,'sine',.03]].forEach(h=>{const o=ac.createOscillator();o.type=h[1];o.frequency.value=f*h[0];const g=ac.createGain();
-    g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(h[2],t+.006);g.gain.exponentialRampToValueAtTime(.0001,t+2.8/h[0]+.4);o.connect(g);g.connect(bus);o.start(t);o.stop(t+3.5);});}
-  let last=6;
-  function phrase(){const t=ac.currentTime+.05, n=1+Math.floor(Math.random()*4);
-    for(let i=0;i<n;i++){last=Math.max(0,Math.min(scale.length-1,last+Math.floor(Math.random()*5)-2));pluck(scale[last],t+i*(.28+Math.random()*.25));}
-    if(Math.random()<.3) pluck(scale[Math.max(0,last-4)]/2,t);
-    timers.push(setTimeout(phrase,(2.6+Math.random()*3.5)*1000));}
-  chirp(); phrase();
+  // Musique antique : bourdon (ison) + aulos (hautbois double grec) + tympanon, mode dorien grec sur Mi
+  const verb=ac.createGain(); verb.gain.value=.5;
+  [[.29,.42],[.41,.36],[.53,.3]].forEach(p=>{const d=ac.createDelay(1.2);d.delayTime.value=p[0];const f=ac.createGain();f.gain.value=p[1];const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=2200;
+    verb.connect(d);d.connect(lp);lp.connect(f);f.connect(d);const w=ac.createGain();w.gain.value=.22;lp.connect(w);w.connect(master);});
+  const bus=ac.createGain(); bus.gain.value=.55; bus.connect(master); bus.connect(verb);
+  // Ison : bourdon grave qui respire
+  const dr=ac.createGain(); dr.gain.value=.0; const drLp=ac.createBiquadFilter(); drLp.type='lowpass'; drLp.frequency.value=320;
+  [82.41,123.47,82.41*1.003].forEach(f=>{const o=ac.createOscillator();o.type='sawtooth';o.frequency.value=f;o.connect(drLp);o.start();});
+  drLp.connect(dr); dr.connect(bus);
+  const br=ac.createOscillator(); br.frequency.value=.05; const brg=ac.createGain(); brg.gain.value=.012; br.connect(brg); brg.connect(dr.gain); br.start();
+  dr.gain.setValueAtTime(0,ac.currentTime); dr.gain.linearRampToValueAtTime(.028,ac.currentTime+6);
+  // Aulos
+  const E=329.63, deg=r=>E*Math.pow(2,r/12);
+  // tétracordes descendants du mode dorien grec (Mi Ré Do Si | La Sol Fa Mi), demi-tons depuis Mi
+  const phrases=[
+    [[7,1.4],[5,.7],[3,.7],[2,1.6],[0,2.4]],
+    [[0,.8],[2,.8],[3,1.2],[5,.6],[3,.6],[2,2.6]],
+    [[12,1.2],[10,.6],[8,.6],[7,1.8],[5,.8],[7,2.4]],
+    [[3,1.0],[5,1.0],[7,1.6],[8,.5],[7,.5],[5,1.2],[3,2.6]],
+    [[7,.9],[3,.9],[5,.6],[7,.6],[8,1.4],[7,.7],[5,.7],[3,3.0]]
+  ];
+  function aulos(ph,t0){
+    const o1=ac.createOscillator(),o2=ac.createOscillator(); o1.type='sawtooth'; o2.type='square';
+    const bp=ac.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=1150; bp.Q.value=1.1;
+    const lp=ac.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=2600;
+    const g=ac.createGain(); g.gain.value=0;
+    const m2=ac.createGain(); m2.gain.value=.35; o2.connect(m2); m2.connect(bp); o1.connect(bp); bp.connect(lp); lp.connect(g); g.connect(bus);
+    const vib=ac.createOscillator(); vib.frequency.value=5.2; const vg=ac.createGain(); vg.gain.value=9; vib.connect(vg); vg.connect(o1.detune); vg.connect(o2.detune);
+    const breath=noiseGain(); breath.connect(bp);
+    let t=t0; o1.frequency.setValueAtTime(deg(ph[0][0]),t); o2.frequency.setValueAtTime(deg(ph[0][0])*.5,t);
+    g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(.11,t+.18);
+    ph.forEach((n,i)=>{ if(i){ o1.frequency.setTargetAtTime(deg(n[0]),t,.035); o2.frequency.setTargetAtTime(deg(n[0])*.5,t,.035);
+        g.gain.setTargetAtTime(.075,t-.02,.02); g.gain.setTargetAtTime(.11,t+.03,.05);} t+=n[1]; });
+    g.gain.setTargetAtTime(0,t-.2,.18);
+    [o1,o2,vib].forEach(o=>{o.start(t0);o.stop(t+1.2);});
+    return t-t0;
+  }
+  function noiseGain(){const n=noise();const f=ac.createBiquadFilter();f.type='highpass';f.frequency.value=2500;const g=ac.createGain();g.gain.value=.012;n.connect(f);f.connect(g);setTimeout(()=>{try{n.stop();}catch(e){}},16000);return g;}
+  // Tympanon : tambour sur cadre, frappes rares et feutrées
+  function drum(t,v){const o=ac.createOscillator();o.type='sine';o.frequency.setValueAtTime(95,t);o.frequency.exponentialRampToValueAtTime(52,t+.35);
+    const g=ac.createGain();g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+.6);o.connect(g);g.connect(bus);o.start(t);o.stop(t+.7);}
+  let pi=0;
+  function phrase(){
+    const t=ac.currentTime+.1, len=aulos(phrases[pi%phrases.length],t);
+    if(pi%2===0){for(let k=0;k<Math.floor(len/1.6);k++) drum(t+k*1.6,k%2?.05:.09);}
+    pi++; timers.push(setTimeout(phrase,(len+3.5+Math.random()*3)*1000));
+  }
+  chirp(); setTimeout(phrase,2500);
 }
 const unlock=new Audio('data:audio/wav;base64,UklGRsQPAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YaAPAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA'); unlock.loop=true; unlock.setAttribute('playsinline','');
 btn.addEventListener('click',async()=>{
