@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arkadia</title>
+<title>Arkadia Island</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -134,6 +134,17 @@ footer .credit{font-size:12px;opacity:.7;max-width:none}
 html[dir="rtl"] .rail{right:auto;left:clamp(10px,2vw,26px)}
 html[dir="rtl"] .laws li,html[dir="rtl"] .moons div{direction:rtl}
 footer{padding-bottom:80px}
+
+.hero .sub p.heroH{font-family:var(--display);font-style:normal;font-size:clamp(22px,3vw,34px);letter-spacing:.06em;line-height:1.15}
+.hero .sub p.heroSub{font-family:var(--quote);font-style:italic;font-size:clamp(19px,2.2vw,25px)}
+.small{font-size:14px}
+.tiers{display:grid;gap:12px}
+.tier{display:grid;gap:6px;padding:18px 20px;border:1px solid rgba(184,137,59,.35);background:rgba(243,238,229,.45)}
+.tier.main{border-color:var(--gold);background:rgba(184,137,59,.12)}
+.tier h3{font-size:18px}.tier p{font-size:15px;color:var(--stone)}.tier strong{font-weight:500;color:var(--aegean)}
+.tier .cap{color:var(--gold)}
+.partner{font-family:var(--quote);font-style:italic;font-size:19px;border-left:2px solid var(--gold);padding-left:14px}
+.tiersel{width:100%;font:inherit;font-size:17px;color:var(--ink);background:transparent;border:0;border-bottom:1px solid rgba(15,30,61,.35);padding:8px 0;border-radius:0}
 </style>
 </head>
 <body>
@@ -155,104 +166,117 @@ footer{padding-bottom:80px}
       <a class="btn line" href="#c5" data-i18n="apply">Apply</a>
     </div>
     <div>
-      <p class="greek">ΑΡΚΑΔΙΑ · ANNO I · MMXXVII</p>
+      <p class="greek">ΑΡΚΑΔΙΑ · ISLAND · ANNO I</p>
       <h1>Arkadia</h1>
       <div class="sub">
-        <p data-i18n="heroSub">An island in the Mediterranean. One hundred citizens. One year to reinvent the art of living.</p>
-        <div class="row"><a class="btn" href="#c5" data-i18n="cta1">Become a citizen</a><a class="btn line" href="#c1" data-i18n="cta2">Read the oath</a></div>
+        <p class="heroH" data-i18n="heroH">The world is your studio.</p>
+        <p class="heroSub" data-i18n="heroSub">100 founding citizens. 365 days. One island. One global channel. Countless stories.</p>
+        <div class="row"><a class="btn" href="#c5" data-i18n="cta1">Join the Founding 100</a><a class="btn line" href="#c1" data-i18n="cta2">Discover the vision</a></div>
       </div>
     </div>
     <div style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:20px">
       <div class="stats">
         <div><strong>C</strong><span class="cap" data-i18n="sCit">citizens</span></div>
         <div><strong>CCCLXV</strong><span class="cap" data-i18n="sDays">days</span></div>
-        <div><strong>XIII</strong><span class="cap" data-i18n="sMoons">moons</span></div>
+        <div><strong>I</strong><span class="cap">global channel</span></div>
       </div>
-      <span class="hint"><i></i data-i18n="scroll">Scroll</span>
+      <span class="hint"><i></i><span data-i18n="scroll">Scroll</span></span>
     </div>
   </header>
 
   <section class="ch right" id="c1" data-stage="1">
-    <div class="panel">
-      <div class="num"><b>Β</b><span class="cap" data-i18n="c1cap">The Oath</span></div>
+    <div class="panel wide">
+      <div class="num"><b>Β</b><span class="cap" data-i18n="c1cap">The Experiment</span></div>
       <div class="meander"></div>
-      <h2 data-i18n="c1h">We are not leaving the world. We are rewriting it.</h2>
-      <p class="q" data-i18n="c1q">“The temple comes apart so that ideas may rise.”</p>
-      <p class="muted" data-i18n="c1p1">Plato dreamed of a just city. Epicurus opened his garden to all. The Stoics taught beneath a painted porch. Arkadia picks up where they left off: one hundred people, one island, and the freedom to design a society from the first stone.</p>
-      <p class="muted" data-i18n="c1p2">For a year, every rule, every meal and every decision is written together. Nothing is taken from the island without being given back.</p>
+      <h2 data-i18n="c1h">The world's first live-streamed philosophy and creativity experiment</h2>
+      <p class="q" data-i18n="c1q">“Come to Arkadia not just to create content, but to create something meaningful that can outlive your social media career.”</p>
+      <p class="muted" data-i18n="c1p1">x</p>
+      <ul class="laws">
+        <li><b>I</b><span><strong>Arkadia Island</strong><span data-i18n="pIslD">x</span></span></li>
+        <li><b>II</b><span><strong>Arkadia Media</strong><span data-i18n="pMedD">x</span></span></li>
+        <li><b>III</b><span><strong>Arkadia Academy</strong><span data-i18n="pAcaD">x</span></span></li>
+      </ul>
+      <p class="muted" data-i18n="c1p2">x</p>
     </div>
   </section>
 
   <section class="ch" id="c2" data-stage="2">
     <div class="panel">
-      <div class="num"><b>Γ</b><span class="cap" data-i18n="c2cap">The Agora of One Hundred</span></div>
+      <div class="num"><b>Γ</b><span class="cap" data-i18n="c2cap">Arkadia One</span></div>
       <div class="meander"></div>
-      <h2 data-i18n="c2h">Here, no one rules alone</h2>
-      <p class="muted" data-i18n="c2p">The columns become seats. Every citizen has a place in the stone circle, and every voice carries the same weight.</p>
+      <h2 data-i18n="c2h">x</h2>
+      <p class="muted" data-i18n="c2p">x</p>
       <ul class="laws">
-        <li><b>I</b><span><strong data-i18n="l1t">The Ekklesia</strong><span data-i18n="l1d">The hundred gather in open air at every new moon.</span></span></li>
-        <li><b>II</b><span><strong data-i18n="l2t">The Klērotērion</strong><span data-i18n="l2d">Roles are drawn by lot, as in ancient Athens, and rotate each moon.</span></span></li>
-        <li><b>III</b><span><strong data-i18n="l3t">Consent</strong><span data-i18n="l3d">A decision passes once no one holds a serious objection.</span></span></li>
-        <li><b>IV</b><span><strong data-i18n="l4t">Parrhēsia</strong><span data-i18n="l4d">The right to speak freely, frankly and without fear.</span></span></li>
+        <li><b>I</b><span><strong>Arkadia Live</strong><span data-i18n="a1d">x</span></span></li>
+        <li><b>II</b><span><strong>Arkadia Academy</strong><span data-i18n="a2d">x</span></span></li>
+        <li><b>III</b><span><strong>Arkadia Journal</strong><span data-i18n="a3d">x</span></span></li>
+        <li><b>IV</b><span><strong>Arkadia Community</strong><span data-i18n="a4d">x</span></span></li>
+        <li><b>V</b><span><strong>Arkadia Events</strong><span data-i18n="a5d">x</span></span></li>
       </ul>
     </div>
   </section>
 
   <section class="ch right dark" id="c3" data-stage="3">
     <div class="panel wide">
-      <div class="num"><b>Δ</b><span class="cap" data-i18n="c3cap">The Calendar</span></div>
+      <div class="num"><b>Δ</b><span class="cap" data-i18n="c3cap">The Series</span></div>
       <div class="meander"></div>
-      <h2 data-i18n="c3h">A year of thirteen moons</h2>
-      <p class="muted" data-i18n="c3p">On the island, time becomes a cycle again. The year unfolds in lunar months, each with its own festival and purpose.</p>
+      <h2 data-i18n="c3h">Life on Arkadia</h2>
+      <p class="muted" data-i18n="c3p">x</p>
       <div class="moons">
-        <div><b>I</b><span data-i18n="m1">Moon of Arrival</span></div><div><b>VIII</b><span data-i18n="m8">Moon of Silence</span></div>
-        <div><b>II</b><span data-i18n="m2">Moon of Foundations</span></div><div><b>IX</b><span data-i18n="m9">Moon of the Harvest</span></div>
-        <div><b>III</b><span data-i18n="m3">Moon of the Olive Trees</span></div><div><b>X</b><span data-i18n="m10">Moon of Inventions</span></div>
-        <div><b>IV</b><span data-i18n="m4">Moon of the Sea</span></div><div><b>XI</b><span data-i18n="m11">Moon of the Muses</span></div>
-        <div><b>V</b><span data-i18n="m5">Moon of Hands</span></div><div><b>XII</b><span data-i18n="m12">Moon of Passing On</span></div>
-        <div><b>VI</b><span data-i18n="m6">Moon of the Constitution</span></div><div><b>XIII</b><span data-i18n="m13">Moon of Return</span></div>
-        <div><b>VII</b><span data-i18n="m7">Moon of the Solstice</span></div>
+        <div><b>I</b><span data-i18n="e1">x</span></div><div><b>VI</b><span data-i18n="e6">x</span></div>
+        <div><b>II</b><span data-i18n="e2">x</span></div><div><b>VII</b><span data-i18n="e7">x</span></div>
+        <div><b>III</b><span data-i18n="e3">x</span></div><div><b>VIII</b><span data-i18n="e8">x</span></div>
+        <div><b>IV</b><span data-i18n="e4">x</span></div><div><b>IX</b><span data-i18n="e9">x</span></div>
+        <div><b>V</b><span data-i18n="e5">x</span></div><div><b>X</b><span data-i18n="e10">x</span></div>
       </div>
+      <p class="muted small" data-i18n="c3priv">x</p>
     </div>
   </section>
 
   <section class="ch" id="c4" data-stage="4">
     <div class="panel wide">
-      <div class="num"><b>Ε</b><span class="cap" data-i18n="c4cap">The Art of Living</span></div>
+      <div class="num"><b>Ε</b><span class="cap" data-i18n="c4cap">The Founders</span></div>
       <div class="meander"></div>
-      <h2 data-i18n="c4h">Six pillars for a whole life</h2>
+      <h2 data-i18n="c4h">x</h2>
       <div class="pill6">
-        <div><em>Oikos</em><h3 data-i18n="p1t">The Cycle</h3><p data-i18n="p1d">Compost, rainwater, reed-bed filtering. Everything that reaches the island is born again.</p></div>
-        <div><em>Kēpos</em><h3 data-i18n="p2t">The Garden</h3><p data-i18n="p2d">Olive groves, vines, terraced gardens, mindful fishing, bread from the common oven.</p></div>
-        <div><em>Scholē</em><h3 data-i18n="p3t">Free Time</h3><p data-i18n="p3d">Four hours of shared work a day. The rest is for learning, making and loving.</p></div>
-        <div><em>Gymnasion</em><h3 data-i18n="p4t">The Body</h3><p data-i18n="p4d">Swimming, freediving, wrestling, trail running, sea baths at dawn.</p></div>
-        <div><em>Symposion</em><h3 data-i18n="p5t">The Banquet</h3><p data-i18n="p5d">Shared meals, music, theatre under the stars, debates until sunrise.</p></div>
-        <div><em>Technē</em><h3 data-i18n="p6t">Energy</h3><p data-i18n="p6d">Sun, wind and low-tech. An open workshop where everyone builds their own tools.</p></div>
+        <div><em>Odysseus</em><h3 data-i18n="r1t">x</h3><p data-i18n="r1d">x</p></div>
+        <div><em>Sophia</em><h3 data-i18n="r2t">x</h3><p data-i18n="r2d">x</p></div>
+        <div><em>Mousai</em><h3 data-i18n="r3t">x</h3><p data-i18n="r3d">x</p></div>
+        <div><em>Technē</em><h3 data-i18n="r4t">x</h3><p data-i18n="r4d">x</p></div>
+        <div><em>Paideia</em><h3 data-i18n="r5t">x</h3><p data-i18n="r5d">x</p></div>
+        <div><em>Historia</em><h3 data-i18n="r6t">x</h3><p data-i18n="r6d">x</p></div>
       </div>
+      <p class="muted small" data-i18n="c4earn">x</p>
     </div>
   </section>
 
   <section class="ch right" id="c5" data-stage="5">
     <div class="panel wide">
-      <div class="num"><b>Ζ</b><span class="cap" data-i18n="c5cap">Become a Citizen</span></div>
+      <div class="num"><b>Ζ</b><span class="cap" data-i18n="c5cap">Join</span></div>
       <div class="meander"></div>
-      <h2 data-i18n="c5h">We set sail on the summer solstice, 2027</h2>
-      <div class="price"><strong>€25,000</strong><span class="muted" data-i18n="priceNote">for the full year, all included. Twenty solidarity scholarships.</span></div>
-      <p class="muted" data-i18n="c5p">Crossing, stone and timber housing, food, energy, care, workshops and schools. Every application is read by the founding council, then followed by a meeting in person.</p>
+      <h2 data-i18n="c5h">x</h2>
+      <div class="tiers">
+        <div class="tier main"><span class="cap">CCCLXV</span><h3>Arkadia Founding 100</h3><p data-i18n="t1d">x</p><strong data-i18n="t1p">x</strong></div>
+        <div class="tier"><span class="cap">VII – XXX</span><h3 data-i18n="t2n">x</h3><p data-i18n="t2d">x</p><strong data-i18n="t2p">x</strong></div>
+        <div class="tier"><span class="cap">XII</span><h3 data-i18n="t3n">x</h3><p data-i18n="t3d">x</p><strong data-i18n="t3p">x</strong></div>
+      </div>
+      <p class="partner" data-i18n="c5partner">x</p>
       <form id="form" novalidate>
         <div class="two">
           <label for="f-name"><span data-i18n="fName">Name</span><input id="f-name" autocomplete="name"></label>
           <label for="f-mail"><span data-i18n="fMail">Email</span><input id="f-mail" type="email" autocomplete="email"></label>
         </div>
-        <label for="f-why"><span data-i18n="fWhy">What you bring to the city</span><textarea id="f-why"></textarea></label>
+        <label for="f-tier"><span data-i18n="fTier">I am interested in</span>
+          <select id="f-tier" class="tiersel"><option>Arkadia Founding 100</option><option data-i18n="t2n">Guest Creators</option><option data-i18n="t3n">Ambassadors</option><option data-i18n="o4">Media partnership</option></select></label>
+        <label for="f-why"><span data-i18n="fWhy">What you bring</span><textarea id="f-why"></textarea></label>
         <p class="err" id="err" data-i18n="fErr">Please enter your name and a valid email address.</p>
         <div><button class="btn" type="submit" data-i18n="fSend">Send my application</button></div>
       </form>
-      <div class="done" id="done" role="status"><h3 data-i18n="doneH">Your voyage begins.</h3><p class="muted" data-i18n="doneP">Application ready. Sending to the council opens with the official launch.</p></div>
+      <div class="done" id="done" role="status"><h3 data-i18n="doneH">Your voyage begins.</h3><p class="muted" data-i18n="doneP">x</p></div>
       <div>
-        <details><summary data-i18n="q1">Can I come as a couple or with family?</summary><p data-i18n="a1">Yes. Couples apply together, and twelve places are set aside for families.</p></details>
-        <details><summary data-i18n="q2">Can I leave during the year?</summary><p data-i18n="a2">Yes. A boat links the island to the mainland at every new moon.</p></details>
-        <details><summary data-i18n="q3">Where is the island?</summary><p data-i18n="a3">In the Mediterranean. Its exact location is revealed to the hundred citizens.</p></details>
+        <details><summary data-i18n="q1">x</summary><p data-i18n="a1">x</p></details>
+        <details><summary data-i18n="q2">x</summary><p data-i18n="a2">x</p></details>
+        <details><summary data-i18n="q3">x</summary><p data-i18n="a3">x</p></details>
       </div>
     </div>
   </section>
@@ -353,6 +377,93 @@ ko:["지원하기","지중해의 한 섬. 백 명의 시민. 삶의 기술을 �
 "시민이 되기","2027년 하지에 출항합니다","일 년 전체, 모든 것 포함. 연대 장학금 20명.","항해, 돌과 나무로 지은 집, 음식, 에너지, 돌봄, 공방과 학교. 모든 지원서는 창립 위원회가 읽고 이후 직접 만남을 갖습니다.","이름","이메일","도시에 가져올 것","이름과 유효한 이메일을 입력하세요.","지원서 보내기","당신의 항해가 시작됩니다.","지원서가 준비되었습니다. 위원회 전송은 공식 출범과 함께 열립니다.",
 "커플이나 가족과 함께 갈 수 있나요?","네. 커플은 함께 지원하며, 가족을 위해 12자리가 마련되어 있습니다.","중간에 떠날 수 있나요?","네. 새달마다 배가 섬과 본토를 잇습니다.","섬은 어디에 있나요?","지중해에 있습니다. 정확한 위치는 백 명의 시민에게만 공개됩니다.","소리 켜짐","소리 꺼짐","흉상: Lee Perry-Smith 스캔, Infinite-Realities, CC BY 3.0","언어"]
 };
+const T2={
+en:{heroH:"The world is your studio.",heroSub:"100 founding citizens. 365 days. One island. One global channel. Countless stories.",cta1:"Join the Founding 100",cta2:"Discover the vision",
+c1cap:"The Experiment",c1h:"The world's first live-streamed philosophy and creativity experiment",c1q:"“Come to Arkadia not just to create content, but to create something meaningful that can outlive your social media career.”",c1p1:"Arkadia invites creators, artists, philosophers, scientists, entrepreneurs, educators and explorers to become the founding voices of a new society: living, learning, creating, teaching and broadcasting their experience to the world.",pIslD:"The destination where people live, experiment, create and meet.",pMedD:"Streaming channel, documentary production, creator network and publishing.",pAcaD:"Philosophy school, learning programmes, creative laboratories and an intellectual library.",c1p2:"The island produces experiences. Media shares them with the world. The academy turns them into knowledge others can use.",
+c2cap:"Arkadia One",c2h:"One platform for everything",c2p:"Every column becomes a voice. Each creator has a profile and a channel inside one shared ecosystem, and everything made on the island grows a common library of knowledge.",a1d:"Watch live broadcasts from the island.",a2d:"Learn philosophy, science, arts and practical skills.",a3d:"Write and publish books, essays and research.",a4d:"Meet, discuss, collaborate and build projects.",a5d:"Attend online and physical experiences.",
+c3cap:"The Series",c3h:"Life on Arkadia",c3p:"A continuous documentary about 100 people building a different way of living. Daily live streams, weekly programmes, monthly documentaries and a feature film at the end of the year.",e1:"The Arrival",e2:"The New Society",e3:"The Philosophy of Happiness",e4:"Money and Freedom",e5:"Art and Human Expression",e6:"Technology and Nature",e7:"Love and Relationships",e8:"The Future of Education",e9:"The Great Experiment",e10:"The Legacy",c3priv:"Residents can take part without being filmed. Privacy, consent and filming-free areas are protected.",
+c4cap:"The Founders",c4h:"Who we are looking for",r1t:"Adventure creators",r1d:"Travel, exploration, sailing, nature and alternative lifestyles.",r2t:"Thought leaders",r2d:"Philosophy, psychology, spirituality and personal development.",r3t:"Artists and writers",r3d:"Visual arts, literature, music, filmmaking and performance.",r4t:"Innovators",r4d:"AI, science, technology, entrepreneurship and sustainability.",r5t:"Educators",r5d:"People who create courses, workshops and educational series.",r6t:"Documentary makers",r6d:"People who can turn the island into an international story.",c4earn:"Creators earn through courses, sponsorships, documentary licensing, live events, books, referrals and original show commissions, with transparent revenue accounts and contracts. What you create on your own stays yours.",
+c5cap:"Join",c5h:"Three ways to be part of Arkadia",t1d:"365 days on the island: accommodation, shared studios, academy and labs, original shows, founding membership and voting rights.",t1p:"€25,000 · citizen membership",t2n:"Guest Creators",t2d:"7 to 30 days of residency with studio access, a dedicated programme and the chance to broadcast your experience.",t2p:"Terms agreed individually",t3n:"Ambassadors",t3d:"12 months promoting Arkadia worldwide without living there: official status, referral fees, events and platform access.",t3p:"Commission on memberships",c5partner:"Streaming or media company? We are looking for a strategic partner to launch the official Arkadia channel.",fTier:"I am interested in",o4:"Media or streaming partnership",fWhy:"What you bring to Arkadia",
+q1:"Will I be filmed all the time?",a1:"No. Filming always requires consent, and the island has filming-free areas.",q2:"Who owns what I create?",a2:"Your existing work and what you create independently stay yours. Joint Arkadia productions and licensed content are defined in clear contracts.",q3:"Where is the island?",a3:"In the Mediterranean. Its exact location is revealed to the founding citizens."},
+fr:{heroH:"Le monde est ton studio.",heroSub:"100 citoyens fondateurs. 365 jours. Une île. Une chaîne mondiale. D'innombrables histoires.",cta1:"Rejoindre les 100 fondateurs",cta2:"Découvrir la vision",
+c1cap:"L'expérience",c1h:"La première expérience de philosophie et de création diffusée en direct au monde",c1q:"« Viens à Arkadia non pas seulement pour créer du contenu, mais pour créer quelque chose qui survivra à ta carrière sur les réseaux. »",c1p1:"Arkadia invite créateurs, artistes, philosophes, scientifiques, entrepreneurs, pédagogues et explorateurs à devenir les voix fondatrices d'une nouvelle société : vivre, apprendre, créer, enseigner et partager leur expérience avec le monde.",pIslD:"Le lieu où l'on vit, expérimente, crée et se rencontre.",pMedD:"Chaîne de streaming, production documentaire, réseau de créateurs et édition.",pAcaD:"École de philosophie, programmes d'apprentissage, laboratoires créatifs et bibliothèque.",c1p2:"L'île produit des expériences. Les médias les partagent avec le monde. L'académie les transforme en savoir utile à tous.",
+c2cap:"Arkadia One",c2h:"Une seule plateforme pour tout",c2p:"Chaque colonne devient une voix. Chaque créateur a son profil et sa chaîne dans un écosystème commun, et tout ce qui naît sur l'île enrichit une bibliothèque partagée.",a1d:"Regarder les directs depuis l'île.",a2d:"Apprendre la philosophie, les sciences, les arts et des savoir-faire.",a3d:"Écrire et publier livres, essais et recherches.",a4d:"Se rencontrer, débattre, collaborer et bâtir des projets.",a5d:"Participer à des expériences en ligne et sur place.",
+c3cap:"La série",c3h:"Life on Arkadia",c3p:"Un documentaire continu sur 100 personnes qui inventent une autre façon de vivre. Directs quotidiens, émissions hebdomadaires, documentaires mensuels et un long métrage en fin d'année.",e1:"L'arrivée",e2:"La nouvelle société",e3:"La philosophie du bonheur",e4:"L'argent et la liberté",e5:"L'art et l'expression humaine",e6:"La technologie et la nature",e7:"L'amour et les relations",e8:"L'avenir de l'éducation",e9:"La grande expérience",e10:"L'héritage",c3priv:"Chacun peut participer sans être filmé. Vie privée, consentement et zones sans caméra sont protégés.",
+c4cap:"Les fondateurs",c4h:"Qui nous cherchons",r1t:"Créateurs d'aventure",r1d:"Voyage, exploration, voile, nature et modes de vie alternatifs.",r2t:"Penseurs",r2d:"Philosophie, psychologie, spiritualité et développement personnel.",r3t:"Artistes et écrivains",r3d:"Arts visuels, littérature, musique, cinéma et spectacle.",r4t:"Innovateurs",r4d:"IA, sciences, technologie, entrepreneuriat et durabilité.",r5t:"Pédagogues",r5d:"Celles et ceux qui créent cours, ateliers et séries éducatives.",r6t:"Documentaristes",r6d:"Celles et ceux qui feront de l'île une histoire internationale.",c4earn:"Les créateurs gagnent leur vie via les cours, les sponsors, les licences documentaires, les événements, les livres, le parrainage et les émissions originales, avec des comptes et contrats transparents. Ce que tu crées seul reste à toi.",
+c5cap:"Rejoindre",c5h:"Trois façons de faire partie d'Arkadia",t1d:"365 jours sur l'île : logement, studios partagés, académie et laboratoires, émissions originales, statut de fondateur et droit de vote.",t1p:"25 000 € · adhésion citoyenne",t2n:"Créateurs invités",t2d:"7 à 30 jours de résidence avec studio, programme dédié et possibilité de diffuser ton expérience.",t2p:"Conditions négociées au cas par cas",t3n:"Ambassadeurs",t3d:"12 mois à faire rayonner Arkadia sans y vivre : statut officiel, commissions de parrainage, événements et accès à la plateforme.",t3p:"Commission sur les adhésions",c5partner:"Plateforme de streaming ou média ? Nous cherchons un partenaire stratégique pour lancer la chaîne officielle d'Arkadia.",fTier:"Je suis intéressé par",o4:"Partenariat média ou streaming",fWhy:"Ce que tu apportes à Arkadia",
+q1:"Serai-je filmé en permanence ?",a1:"Non. Tout tournage exige ton accord, et l'île a des zones sans caméra.",q2:"À qui appartient ce que je crée ?",a2:"Tes œuvres existantes et ce que tu crées seul restent à toi. Les productions communes et les licences sont définies par contrat.",q3:"Où se trouve l'île ?",a3:"En Méditerranée. Sa position exacte est révélée aux citoyens fondateurs."},
+es:{heroH:"El mundo es tu estudio.",heroSub:"100 ciudadanos fundadores. 365 días. Una isla. Un canal global. Historias sin fin.",cta1:"Únete a los 100 fundadores",cta2:"Descubre la visión",
+c1cap:"El experimento",c1h:"El primer experimento de filosofía y creatividad transmitido en directo al mundo",c1q:"«Ven a Arkadia no solo a crear contenido, sino a crear algo con sentido que sobreviva a tu carrera en redes.»",c1p1:"Arkadia invita a creadores, artistas, filósofos, científicos, emprendedores, educadores y exploradores a ser las voces fundadoras de una nueva sociedad: vivir, aprender, crear, enseñar y compartir su experiencia con el mundo.",pIslD:"El lugar donde se vive, se experimenta, se crea y se convive.",pMedD:"Canal de streaming, producción documental, red de creadores y edición.",pAcaD:"Escuela de filosofía, programas de aprendizaje, laboratorios creativos y biblioteca.",c1p2:"La isla produce experiencias. Los medios las comparten con el mundo. La academia las convierte en conocimiento útil.",
+c2cap:"Arkadia One",c2h:"Una plataforma para todo",c2p:"Cada columna se convierte en una voz. Cada creador tiene su perfil y su canal en un ecosistema común, y todo lo creado en la isla amplía una biblioteca compartida.",a1d:"Ver directos desde la isla.",a2d:"Aprender filosofía, ciencia, artes y habilidades prácticas.",a3d:"Escribir y publicar libros, ensayos e investigación.",a4d:"Encontrarse, debatir, colaborar y crear proyectos.",a5d:"Vivir experiencias en línea y presenciales.",
+c3cap:"La serie",c3h:"Life on Arkadia",c3p:"Un documental continuo sobre 100 personas que construyen otra forma de vivir. Directos diarios, programas semanales, documentales mensuales y un largometraje al final del año.",e1:"La llegada",e2:"La nueva sociedad",e3:"La filosofía de la felicidad",e4:"Dinero y libertad",e5:"El arte y la expresión humana",e6:"Tecnología y naturaleza",e7:"El amor y las relaciones",e8:"El futuro de la educación",e9:"El gran experimento",e10:"El legado",c3priv:"Se puede participar sin ser filmado. La privacidad, el consentimiento y las zonas sin cámaras están protegidos.",
+c4cap:"Los fundadores",c4h:"A quién buscamos",r1t:"Creadores de aventura",r1d:"Viajes, exploración, vela, naturaleza y estilos de vida alternativos.",r2t:"Pensadores",r2d:"Filosofía, psicología, espiritualidad y desarrollo personal.",r3t:"Artistas y escritores",r3d:"Artes visuales, literatura, música, cine y artes escénicas.",r4t:"Innovadores",r4d:"IA, ciencia, tecnología, emprendimiento y sostenibilidad.",r5t:"Educadores",r5d:"Personas que crean cursos, talleres y series educativas.",r6t:"Documentalistas",r6d:"Personas capaces de convertir la isla en una historia internacional.",c4earn:"Los creadores ganan con cursos, patrocinios, licencias documentales, eventos, libros, referidos y programas originales, con cuentas y contratos transparentes. Lo que creas por tu cuenta sigue siendo tuyo.",
+c5cap:"Únete",c5h:"Tres formas de formar parte de Arkadia",t1d:"365 días en la isla: alojamiento, estudios compartidos, academia y laboratorios, programas originales, membresía fundadora y derecho a voto.",t1p:"25.000 € · membresía ciudadana",t2n:"Creadores invitados",t2d:"De 7 a 30 días de residencia con estudio, programa propio y la posibilidad de transmitir tu experiencia.",t2p:"Condiciones acordadas individualmente",t3n:"Embajadores",t3d:"12 meses promoviendo Arkadia sin vivir allí: estatus oficial, comisiones por referidos, eventos y acceso a la plataforma.",t3p:"Comisión por membresía",c5partner:"¿Plataforma de streaming o medio? Buscamos un socio estratégico para lanzar el canal oficial de Arkadia.",fTier:"Me interesa",o4:"Alianza de medios o streaming",fWhy:"Lo que aportas a Arkadia",
+q1:"¿Me filmarán todo el tiempo?",a1:"No. Grabar siempre requiere consentimiento, y la isla tiene zonas sin cámaras.",q2:"¿De quién es lo que creo?",a2:"Tu obra previa y lo que creas por tu cuenta siguen siendo tuyos. Las producciones conjuntas y las licencias se definen por contrato.",q3:"¿Dónde está la isla?",a3:"En el Mediterráneo. Su ubicación exacta se revela a los ciudadanos fundadores."},
+de:{heroH:"Die Welt ist dein Studio.",heroSub:"100 Gründungsbürger. 365 Tage. Eine Insel. Ein globaler Kanal. Unzählige Geschichten.",cta1:"Werde Teil der Gründungs-100",cta2:"Die Vision entdecken",
+c1cap:"Das Experiment",c1h:"Das erste live übertragene Experiment für Philosophie und Kreativität",c1q:"„Komm nach Arkadia, nicht nur um Content zu machen, sondern um etwas Bedeutendes zu schaffen, das deine Social-Media-Karriere überdauert.“",c1p1:"Arkadia lädt Creator, Künstler, Philosophen, Wissenschaftler, Unternehmer, Lehrende und Entdecker ein, die Gründungsstimmen einer neuen Gesellschaft zu werden: leben, lernen, schaffen, lehren und ihre Erfahrung mit der Welt teilen.",pIslD:"Der Ort, an dem Menschen leben, experimentieren, schaffen und sich begegnen.",pMedD:"Streamingkanal, Dokumentarproduktion, Creator-Netzwerk und Verlag.",pAcaD:"Philosophieschule, Lernprogramme, kreative Labore und Bibliothek.",c1p2:"Die Insel erzeugt Erfahrungen. Die Medien teilen sie mit der Welt. Die Akademie macht daraus nutzbares Wissen.",
+c2cap:"Arkadia One",c2h:"Eine Plattform für alles",c2p:"Jede Säule wird zur Stimme. Jeder Creator hat Profil und Kanal in einem gemeinsamen Ökosystem, und alles, was auf der Insel entsteht, wächst zu einer gemeinsamen Wissensbibliothek.",a1d:"Livestreams von der Insel ansehen.",a2d:"Philosophie, Wissenschaft, Kunst und Praxis lernen.",a3d:"Bücher, Essays und Forschung schreiben und veröffentlichen.",a4d:"Sich treffen, diskutieren, zusammenarbeiten, Projekte bauen.",a5d:"Online- und Vor-Ort-Erlebnisse besuchen.",
+c3cap:"Die Serie",c3h:"Life on Arkadia",c3p:"Eine fortlaufende Dokumentation über 100 Menschen, die eine andere Lebensweise aufbauen. Tägliche Livestreams, wöchentliche Sendungen, monatliche Dokus und ein Spielfilm zum Jahresende.",e1:"Die Ankunft",e2:"Die neue Gesellschaft",e3:"Die Philosophie des Glücks",e4:"Geld und Freiheit",e5:"Kunst und menschlicher Ausdruck",e6:"Technik und Natur",e7:"Liebe und Beziehungen",e8:"Die Zukunft der Bildung",e9:"Das große Experiment",e10:"Das Vermächtnis",c3priv:"Man kann teilnehmen, ohne gefilmt zu werden. Privatsphäre, Einwilligung und kamerafreie Zonen sind geschützt.",
+c4cap:"Die Gründer",c4h:"Wen wir suchen",r1t:"Abenteuer-Creator",r1d:"Reisen, Entdeckung, Segeln, Natur und alternative Lebensstile.",r2t:"Vordenker",r2d:"Philosophie, Psychologie, Spiritualität und Persönlichkeitsentwicklung.",r3t:"Künstler und Autoren",r3d:"Bildende Kunst, Literatur, Musik, Film und Performance.",r4t:"Innovatoren",r4d:"KI, Wissenschaft, Technologie, Unternehmertum und Nachhaltigkeit.",r5t:"Lehrende",r5d:"Menschen, die Kurse, Workshops und Bildungsserien gestalten.",r6t:"Dokumentarfilmer",r6d:"Menschen, die die Insel zu einer internationalen Geschichte machen.",c4earn:"Creator verdienen durch Kurse, Sponsoring, Dokumentarlizenzen, Events, Bücher, Empfehlungen und Auftragsproduktionen, mit transparenten Konten und Verträgen. Was du selbst schaffst, bleibt deins.",
+c5cap:"Mitmachen",c5h:"Drei Wege, Teil von Arkadia zu werden",t1d:"365 Tage auf der Insel: Unterkunft, gemeinsame Studios, Akademie und Labore, eigene Sendungen, Gründungsmitgliedschaft und Stimmrecht.",t1p:"25.000 € · Bürgermitgliedschaft",t2n:"Gast-Creator",t2d:"7 bis 30 Tage Residenz mit Studio, eigenem Programm und der Chance, deine Erfahrung zu senden.",t2p:"Individuell vereinbart",t3n:"Botschafter",t3d:"12 Monate Arkadia weltweit fördern, ohne dort zu leben: offizieller Status, Provisionen, Events und Plattformzugang.",t3p:"Provision pro Mitgliedschaft",c5partner:"Streaming- oder Medienunternehmen? Wir suchen einen strategischen Partner für den offiziellen Arkadia-Kanal.",fTier:"Ich interessiere mich für",o4:"Medien- oder Streamingpartnerschaft",fWhy:"Was du nach Arkadia mitbringst",
+q1:"Werde ich ständig gefilmt?",a1:"Nein. Gefilmt wird nur mit Einwilligung, und es gibt kamerafreie Zonen.",q2:"Wem gehört, was ich schaffe?",a2:"Deine bestehenden Werke und eigenständige Arbeiten bleiben deine. Gemeinsame Produktionen und Lizenzen regeln klare Verträge.",q3:"Wo liegt die Insel?",a3:"Im Mittelmeer. Die genaue Lage erfahren die Gründungsbürger."},
+it:{heroH:"Il mondo è il tuo studio.",heroSub:"100 cittadini fondatori. 365 giorni. Un'isola. Un canale globale. Infinite storie.",cta1:"Unisciti ai 100 fondatori",cta2:"Scopri la visione",
+c1cap:"L'esperimento",c1h:"Il primo esperimento di filosofia e creatività trasmesso in diretta al mondo",c1q:"«Vieni ad Arkadia non solo per creare contenuti, ma per creare qualcosa di significativo che sopravviva alla tua carriera social.»",c1p1:"Arkadia invita creator, artisti, filosofi, scienziati, imprenditori, educatori ed esploratori a diventare le voci fondatrici di una nuova società: vivere, imparare, creare, insegnare e condividere la propria esperienza con il mondo.",pIslD:"Il luogo dove si vive, si sperimenta, si crea e ci si incontra.",pMedD:"Canale streaming, produzione documentaria, rete di creator ed editoria.",pAcaD:"Scuola di filosofia, percorsi formativi, laboratori creativi e biblioteca.",c1p2:"L'isola produce esperienze. I media le condividono con il mondo. L'accademia le trasforma in conoscenza utile.",
+c2cap:"Arkadia One",c2h:"Una piattaforma per tutto",c2p:"Ogni colonna diventa una voce. Ogni creator ha il suo profilo e il suo canale in un ecosistema comune, e tutto ciò che nasce sull'isola arricchisce una biblioteca condivisa.",a1d:"Guardare le dirette dall'isola.",a2d:"Imparare filosofia, scienza, arti e competenze pratiche.",a3d:"Scrivere e pubblicare libri, saggi e ricerche.",a4d:"Incontrarsi, discutere, collaborare e costruire progetti.",a5d:"Partecipare a esperienze online e dal vivo.",
+c3cap:"La serie",c3h:"Life on Arkadia",c3p:"Un documentario continuo su 100 persone che costruiscono un altro modo di vivere. Dirette quotidiane, programmi settimanali, documentari mensili e un film a fine anno.",e1:"L'arrivo",e2:"La nuova società",e3:"La filosofia della felicità",e4:"Denaro e libertà",e5:"L'arte e l'espressione umana",e6:"Tecnologia e natura",e7:"Amore e relazioni",e8:"Il futuro dell'educazione",e9:"Il grande esperimento",e10:"L'eredità",c3priv:"Si può partecipare senza essere ripresi. Privacy, consenso e zone senza telecamere sono tutelati.",
+c4cap:"I fondatori",c4h:"Chi cerchiamo",r1t:"Creator d'avventura",r1d:"Viaggi, esplorazione, vela, natura e stili di vita alternativi.",r2t:"Pensatori",r2d:"Filosofia, psicologia, spiritualità e crescita personale.",r3t:"Artisti e scrittori",r3d:"Arti visive, letteratura, musica, cinema e performance.",r4t:"Innovatori",r4d:"IA, scienza, tecnologia, imprenditoria e sostenibilità.",r5t:"Educatori",r5d:"Persone che creano corsi, workshop e serie educative.",r6t:"Documentaristi",r6d:"Persone capaci di trasformare l'isola in una storia internazionale.",c4earn:"I creator guadagnano con corsi, sponsorizzazioni, licenze documentarie, eventi, libri, referral e produzioni originali, con conti e contratti trasparenti. Ciò che crei da solo resta tuo.",
+c5cap:"Partecipa",c5h:"Tre modi per far parte di Arkadia",t1d:"365 giorni sull'isola: alloggio, studi condivisi, accademia e laboratori, programmi originali, adesione fondatrice e diritto di voto.",t1p:"25.000 € · adesione cittadina",t2n:"Creator ospiti",t2d:"Da 7 a 30 giorni di residenza con studio, programma dedicato e la possibilità di trasmettere la tua esperienza.",t2p:"Condizioni concordate individualmente",t3n:"Ambasciatori",t3d:"12 mesi a promuovere Arkadia nel mondo senza viverci: status ufficiale, commissioni, eventi e accesso alla piattaforma.",t3p:"Commissione sulle adesioni",c5partner:"Piattaforma streaming o media? Cerchiamo un partner strategico per lanciare il canale ufficiale di Arkadia.",fTier:"Mi interessa",o4:"Partnership media o streaming",fWhy:"Ciò che porti ad Arkadia",
+q1:"Sarò ripreso tutto il tempo?",a1:"No. Le riprese richiedono sempre il consenso e l'isola ha zone senza telecamere.",q2:"Di chi è ciò che creo?",a2:"Le tue opere esistenti e ciò che crei da solo restano tue. Produzioni comuni e licenze sono definite da contratti chiari.",q3:"Dov'è l'isola?",a3:"Nel Mediterraneo. La posizione esatta è rivelata ai cittadini fondatori."},
+pt:{heroH:"O mundo é o teu estúdio.",heroSub:"100 cidadãos fundadores. 365 dias. Uma ilha. Um canal global. Histórias sem fim.",cta1:"Junta-te aos 100 fundadores",cta2:"Descobrir a visão",
+c1cap:"A experiência",c1h:"A primeira experiência de filosofia e criatividade transmitida ao vivo para o mundo",c1q:"«Vem para Arkadia não só para criar conteúdo, mas para criar algo com significado que sobreviva à tua carreira nas redes.»",c1p1:"Arkadia convida criadores, artistas, filósofos, cientistas, empreendedores, educadores e exploradores a serem as vozes fundadoras de uma nova sociedade: viver, aprender, criar, ensinar e partilhar a sua experiência com o mundo.",pIslD:"O lugar onde se vive, experimenta, cria e convive.",pMedD:"Canal de streaming, produção documental, rede de criadores e edição.",pAcaD:"Escola de filosofia, programas de aprendizagem, laboratórios criativos e biblioteca.",c1p2:"A ilha produz experiências. Os média partilham-nas com o mundo. A academia transforma-as em conhecimento útil.",
+c2cap:"Arkadia One",c2h:"Uma plataforma para tudo",c2p:"Cada coluna torna-se uma voz. Cada criador tem o seu perfil e canal num ecossistema comum, e tudo o que nasce na ilha alimenta uma biblioteca partilhada.",a1d:"Ver transmissões ao vivo da ilha.",a2d:"Aprender filosofia, ciência, artes e competências práticas.",a3d:"Escrever e publicar livros, ensaios e investigação.",a4d:"Encontrar, debater, colaborar e construir projetos.",a5d:"Participar em experiências online e presenciais.",
+c3cap:"A série",c3h:"Life on Arkadia",c3p:"Um documentário contínuo sobre 100 pessoas que constroem outra forma de viver. Diretos diários, programas semanais, documentários mensais e uma longa-metragem no fim do ano.",e1:"A chegada",e2:"A nova sociedade",e3:"A filosofia da felicidade",e4:"Dinheiro e liberdade",e5:"A arte e a expressão humana",e6:"Tecnologia e natureza",e7:"Amor e relações",e8:"O futuro da educação",e9:"A grande experiência",e10:"O legado",c3priv:"É possível participar sem ser filmado. Privacidade, consentimento e zonas sem câmaras são protegidos.",
+c4cap:"Os fundadores",c4h:"Quem procuramos",r1t:"Criadores de aventura",r1d:"Viagens, exploração, vela, natureza e estilos de vida alternativos.",r2t:"Pensadores",r2d:"Filosofia, psicologia, espiritualidade e desenvolvimento pessoal.",r3t:"Artistas e escritores",r3d:"Artes visuais, literatura, música, cinema e performance.",r4t:"Inovadores",r4d:"IA, ciência, tecnologia, empreendedorismo e sustentabilidade.",r5t:"Educadores",r5d:"Pessoas que criam cursos, workshops e séries educativas.",r6t:"Documentaristas",r6d:"Pessoas capazes de transformar a ilha numa história internacional.",c4earn:"Os criadores ganham com cursos, patrocínios, licenças documentais, eventos, livros, indicações e programas originais, com contas e contratos transparentes. O que crias sozinho continua a ser teu.",
+c5cap:"Participar",c5h:"Três formas de fazer parte de Arkadia",t1d:"365 dias na ilha: alojamento, estúdios partilhados, academia e laboratórios, programas originais, estatuto de fundador e direito de voto.",t1p:"25 000 € · adesão de cidadão",t2n:"Criadores convidados",t2d:"De 7 a 30 dias de residência com estúdio, programa dedicado e a hipótese de transmitir a tua experiência.",t2p:"Condições acordadas individualmente",t3n:"Embaixadores",t3d:"12 meses a promover Arkadia sem lá viver: estatuto oficial, comissões, eventos e acesso à plataforma.",t3p:"Comissão por adesão",c5partner:"Plataforma de streaming ou média? Procuramos um parceiro estratégico para lançar o canal oficial de Arkadia.",fTier:"Tenho interesse em",o4:"Parceria de média ou streaming",fWhy:"O que trazes para Arkadia",
+q1:"Vou ser filmado o tempo todo?",a1:"Não. Filmar exige sempre consentimento, e a ilha tem zonas sem câmaras.",q2:"A quem pertence o que crio?",a2:"As tuas obras existentes e o que crias sozinho continuam teus. Produções conjuntas e licenças são definidas por contrato.",q3:"Onde fica a ilha?",a3:"No Mediterrâneo. A localização exata é revelada aos cidadãos fundadores."},
+ru:{heroH:"Мир — твоя студия.",heroSub:"100 граждан-основателей. 365 дней. Один остров. Один глобальный канал. Бесчисленные истории.",cta1:"Стать одним из 100 основателей",cta2:"Узнать о замысле",
+c1cap:"Эксперимент",c1h:"Первый в мире эксперимент философии и творчества в прямом эфире",c1q:"«Приезжай в Аркадию не просто делать контент, а создать что-то значимое, что переживёт твою карьеру в соцсетях.»",c1p1:"Аркадия приглашает авторов, художников, философов, учёных, предпринимателей, педагогов и исследователей стать голосами-основателями нового общества: жить, учиться, творить, учить и делиться опытом с миром.",pIslD:"Место, где люди живут, экспериментируют, творят и встречаются.",pMedD:"Стриминговый канал, документальное кино, сеть авторов и издательство.",pAcaD:"Школа философии, учебные программы, творческие лаборатории и библиотека.",c1p2:"Остров рождает опыт. Медиа делятся им с миром. Академия превращает его в знание для всех.",
+c2cap:"Arkadia One",c2h:"Одна платформа для всего",c2p:"Каждая колонна становится голосом. У каждого автора свой профиль и канал в общей экосистеме, и всё созданное на острове пополняет общую библиотеку знаний.",a1d:"Смотреть прямые эфиры с острова.",a2d:"Изучать философию, науку, искусство и практические навыки.",a3d:"Писать и публиковать книги, эссе и исследования.",a4d:"Встречаться, обсуждать, сотрудничать и строить проекты.",a5d:"Посещать онлайн- и офлайн-события.",
+c3cap:"Сериал",c3h:"Life on Arkadia",c3p:"Непрерывный документальный рассказ о 100 людях, строящих иной образ жизни. Ежедневные эфиры, еженедельные программы, ежемесячные фильмы и полнометражный фильм в конце года.",e1:"Прибытие",e2:"Новое общество",e3:"Философия счастья",e4:"Деньги и свобода",e5:"Искусство и самовыражение",e6:"Технологии и природа",e7:"Любовь и отношения",e8:"Будущее образования",e9:"Великий эксперимент",e10:"Наследие",c3priv:"Участвовать можно и без съёмки. Приватность, согласие и зоны без камер защищены.",
+c4cap:"Основатели",c4h:"Кого мы ищем",r1t:"Авторы приключений",r1d:"Путешествия, исследования, парусный спорт, природа и альтернативный образ жизни.",r2t:"Мыслители",r2d:"Философия, психология, духовность и личностный рост.",r3t:"Художники и писатели",r3d:"Изобразительное искусство, литература, музыка, кино и перформанс.",r4t:"Инноваторы",r4d:"ИИ, наука, технологии, предпринимательство и устойчивость.",r5t:"Педагоги",r5d:"Те, кто создаёт курсы, мастер-классы и образовательные серии.",r6t:"Документалисты",r6d:"Те, кто превратит остров в историю для всего мира.",c4earn:"Авторы зарабатывают на курсах, спонсорстве, лицензиях на фильмы, событиях, книгах, рефералах и заказных шоу, с прозрачными счетами и договорами. Созданное тобой самостоятельно остаётся твоим.",
+c5cap:"Присоединиться",c5h:"Три способа стать частью Аркадии",t1d:"365 дней на острове: жильё, общие студии, академия и лаборатории, свои шоу, статус основателя и право голоса.",t1p:"25 000 € · гражданское членство",t2n:"Приглашённые авторы",t2d:"От 7 до 30 дней резиденции со студией, отдельной программой и возможностью транслировать свой опыт.",t2p:"Условия по договорённости",t3n:"Амбассадоры",t3d:"12 месяцев продвигать Аркадию, не живя там: официальный статус, реферальные выплаты, события и доступ к платформе.",t3p:"Комиссия за членство",c5partner:"Стриминговая или медиакомпания? Мы ищем стратегического партнёра для запуска официального канала Аркадии.",fTier:"Меня интересует",o4:"Медиа- или стриминговое партнёрство",fWhy:"Что вы привнесёте в Аркадию",
+q1:"Меня будут снимать всё время?",a1:"Нет. Съёмка только с согласия, на острове есть зоны без камер.",q2:"Кому принадлежит то, что я создаю?",a2:"Ваши прежние работы и созданное самостоятельно остаются вашими. Совместные проекты и лицензии оформляются договорами.",q3:"Где находится остров?",a3:"В Средиземном море. Точное место знают граждане-основатели."},
+zh:{heroH:"世界就是你的工作室。",heroSub:"100位创始公民。365天。一座岛。一个全球频道。无数故事。",cta1:"加入创始100人",cta2:"了解愿景",
+c1cap:"实验",c1h:"全球首个直播的哲学与创意实验",c1q:"“来到 Arkadia，不只是为了创作内容，而是创造比你的社交媒体生涯更长久、更有意义的东西。”",c1p1:"Arkadia 邀请创作者、艺术家、哲学家、科学家、企业家、教育者和探险者，成为一个新社会的创始之声：在这里生活、学习、创作、教学，并向世界分享经历。",pIslD:"人们生活、实验、创作与相遇的地方。",pMedD:"流媒体频道、纪录片制作、创作者网络与出版。",pAcaD:"哲学学院、学习项目、创意实验室与知识图书馆。",c1p2:"岛屿创造体验，媒体向世界分享，学院把体验变成人人可用的知识。",
+c2cap:"Arkadia One",c2h:"一个平台，包含一切",c2p:"每根石柱都化为一个声音。每位创作者在共同生态中拥有自己的主页和频道，岛上诞生的一切都汇入共享的知识库。",a1d:"观看来自岛上的直播。",a2d:"学习哲学、科学、艺术与实用技能。",a3d:"撰写并出版书籍、文章与研究。",a4d:"相遇、讨论、合作、共建项目。",a5d:"参加线上与线下活动。",
+c3cap:"系列节目",c3h:"Life on Arkadia",c3p:"一部持续拍摄的纪录片，记录100个人打造另一种生活方式。每日直播、每周节目、每月纪录片，年末一部长片。",e1:"抵达",e2:"新社会",e3:"幸福的哲学",e4:"金钱与自由",e5:"艺术与人的表达",e6:"科技与自然",e7:"爱与关系",e8:"教育的未来",e9:"伟大的实验",e10:"遗产",c3priv:"居民可以不被拍摄而参与。隐私、同意与无拍摄区域都受到保护。",
+c4cap:"创始者",c4h:"我们在寻找谁",r1t:"冒险创作者",r1d:"旅行、探索、航海、自然与另类生活方式。",r2t:"思想领袖",r2d:"哲学、心理学、灵性与个人成长。",r3t:"艺术家与作家",r3d:"视觉艺术、文学、音乐、电影与表演。",r4t:"创新者",r4d:"人工智能、科学、科技、创业与可持续发展。",r5t:"教育者",r5d:"能打造课程、工作坊和教育系列的人。",r6t:"纪录片创作者",r6d:"能把这座岛变成国际故事的人。",c4earn:"创作者可通过课程、赞助、纪录片授权、现场活动、图书、推荐和原创节目委托获得收入，账户与合同透明。你独立创作的作品归你所有。",
+c5cap:"加入",c5h:"参与 Arkadia 的三种方式",t1d:"在岛上365天：住宿、共享工作室、学院与实验室、原创节目、创始成员身份与投票权。",t1p:"25,000 欧元 · 公民会籍",t2n:"客座创作者",t2d:"7至30天驻留，提供工作室、专属项目，并可直播你的体验。",t2p:"条款单独商定",t3n:"大使",t3d:"12个月在全球推广 Arkadia，无需常住：官方身份、推荐佣金、活动邀请与平台使用权。",t3p:"会籍推荐佣金",c5partner:"流媒体或媒体公司？我们正在寻找战略合作伙伴，共同推出 Arkadia 官方频道。",fTier:"我感兴趣的是",o4:"媒体或流媒体合作",fWhy:"你能为 Arkadia 带来什么",
+q1:"我会一直被拍摄吗？",a1:"不会。拍摄须经同意，岛上设有无拍摄区域。",q2:"我创作的作品归谁？",a2:"你已有的作品和独立创作归你所有。联合制作与授权内容以清晰合同约定。",q3:"岛在哪里？",a3:"在地中海。确切位置仅告知创始公民。"},
+ja:{heroH:"世界はあなたのスタジオ。",heroSub:"100人の創設市民。365日。ひとつの島。ひとつのグローバルチャンネル。数えきれない物語。",cta1:"創設100人に加わる",cta2:"ビジョンを見る",
+c1cap:"実験",c1h:"世界初の、ライブ配信される哲学と創造の実験",c1q:"「Arkadia に来るのは、コンテンツを作るためだけではない。SNSのキャリアより長く残る、意味あるものを創るためだ。」",c1p1:"Arkadia は、クリエイター、アーティスト、哲学者、科学者、起業家、教育者、探検家を、新しい社会の創設の声として招きます。暮らし、学び、創り、教え、その経験を世界へ届けるために。",pIslD:"人が暮らし、試し、創り、出会う場所。",pMedD:"配信チャンネル、ドキュメンタリー制作、クリエイターネットワーク、出版。",pAcaD:"哲学の学校、学習プログラム、創造のラボ、知の図書館。",c1p2:"島が経験を生み、メディアがそれを世界に届け、アカデミーが誰もが使える知に変える。",
+c2cap:"Arkadia One",c2h:"すべてをひとつのプラットフォームに",c2p:"柱の一本一本が声になる。クリエイターはそれぞれ共通のエコシステムの中にプロフィールとチャンネルを持ち、島で生まれたすべてが共有の知の図書館を育てる。",a1d:"島からのライブ配信を観る。",a2d:"哲学、科学、芸術、実践的スキルを学ぶ。",a3d:"本、エッセイ、研究を書いて出版する。",a4d:"出会い、議論し、協力し、プロジェクトをつくる。",a5d:"オンラインと現地のイベントに参加する。",
+c3cap:"シリーズ",c3h:"Life on Arkadia",c3p:"もうひとつの生き方を築く100人を追う、終わりのないドキュメンタリー。毎日のライブ、週刊番組、月刊ドキュメンタリー、そして年末の長編映画。",e1:"到着",e2:"新しい社会",e3:"幸福の哲学",e4:"お金と自由",e5:"芸術と表現",e6:"テクノロジーと自然",e7:"愛と人間関係",e8:"教育の未来",e9:"大いなる実験",e10:"遺すもの",c3priv:"撮影されずに参加することもできます。プライバシー、同意、撮影禁止エリアは守られます。",
+c4cap:"創設者たち",c4h:"私たちが求める人",r1t:"冒険クリエイター",r1d:"旅、探検、セーリング、自然、オルタナティブな暮らし。",r2t:"思想家",r2d:"哲学、心理学、スピリチュアリティ、自己成長。",r3t:"アーティストと作家",r3d:"美術、文学、音楽、映画、パフォーマンス。",r4t:"イノベーター",r4d:"AI、科学、テクノロジー、起業、サステナビリティ。",r5t:"教育者",r5d:"講座、ワークショップ、教育シリーズをつくる人。",r6t:"ドキュメンタリー作家",r6d:"この島を世界の物語にできる人。",c4earn:"クリエイターは講座、スポンサー、ドキュメンタリーのライセンス、イベント、書籍、紹介、オリジナル番組で収入を得られます。収益口座と契約は透明。あなたが独自に創ったものはあなたのものです。",
+c5cap:"参加する",c5h:"Arkadia に関わる3つの方法",t1d:"島での365日：住まい、共有スタジオ、アカデミーとラボ、オリジナル番組、創設メンバー資格と投票権。",t1p:"25,000ユーロ · 市民メンバーシップ",t2n:"ゲストクリエイター",t2d:"7〜30日のレジデンス。スタジオ、専用プログラム、体験を配信する機会。",t2p:"条件は個別に合意",t3n:"アンバサダー",t3d:"島に住まずに12か月間 Arkadia を世界に広める：公式資格、紹介報酬、イベント、プラットフォーム利用。",t3p:"メンバーシップ紹介報酬",c5partner:"配信・メディア企業の方へ。Arkadia 公式チャンネルを共に立ち上げる戦略パートナーを探しています。",fTier:"興味があるもの",o4:"メディア・配信パートナーシップ",fWhy:"Arkadia にもたらすもの",
+q1:"ずっと撮影されますか？",a1:"いいえ。撮影には必ず同意が必要で、島には撮影禁止エリアがあります。",q2:"創ったものは誰のもの？",a2:"既存の作品や独自に創ったものはあなたのものです。共同制作やライセンスは明確な契約で定めます。",q3:"島はどこにありますか？",a3:"地中海です。正確な場所は創設市民にのみ明かされます。"},
+ar:{heroH:"العالم هو الاستوديو الخاص بك.",heroSub:"100 مواطن مؤسس. 365 يوماً. جزيرة واحدة. قناة عالمية واحدة. قصص لا تُحصى.",cta1:"انضم إلى المئة المؤسسين",cta2:"اكتشف الرؤية",
+c1cap:"التجربة",c1h:"أول تجربة فلسفية وإبداعية تُبث مباشرة إلى العالم",c1q:"«تعال إلى أركاديا لا لتصنع محتوى فحسب، بل لتصنع شيئاً ذا معنى يبقى بعد مسيرتك على وسائل التواصل.»",c1p1:"تدعو أركاديا المبدعين والفنانين والفلاسفة والعلماء ورواد الأعمال والمعلمين والمستكشفين ليكونوا الأصوات المؤسسة لمجتمع جديد: يعيشون ويتعلمون ويبدعون ويعلّمون ويشاركون تجربتهم مع العالم.",pIslD:"المكان الذي يعيش فيه الناس ويجربون ويبدعون ويلتقون.",pMedD:"قناة بث، إنتاج وثائقي، شبكة مبدعين ونشر.",pAcaD:"مدرسة فلسفة، برامج تعليمية، مختبرات إبداعية ومكتبة معرفية.",c1p2:"الجزيرة تصنع التجارب، والإعلام يشاركها مع العالم، والأكاديمية تحوّلها إلى معرفة ينتفع بها الجميع.",
+c2cap:"Arkadia One",c2h:"منصة واحدة لكل شيء",c2p:"يتحول كل عمود إلى صوت. لكل مبدع صفحته وقناته داخل منظومة مشتركة، وكل ما يولد على الجزيرة يُثري مكتبة معرفية مشتركة.",a1d:"مشاهدة البث المباشر من الجزيرة.",a2d:"تعلّم الفلسفة والعلوم والفنون والمهارات العملية.",a3d:"كتابة ونشر الكتب والمقالات والأبحاث.",a4d:"اللقاء والنقاش والتعاون وبناء المشاريع.",a5d:"حضور تجارب عبر الإنترنت وعلى أرض الواقع.",
+c3cap:"السلسلة",c3h:"Life on Arkadia",c3p:"وثائقي متواصل عن 100 شخص يبنون طريقة أخرى للعيش. بث يومي، برامج أسبوعية، وثائقيات شهرية وفيلم طويل في نهاية العام.",e1:"الوصول",e2:"المجتمع الجديد",e3:"فلسفة السعادة",e4:"المال والحرية",e5:"الفن والتعبير الإنساني",e6:"التقنية والطبيعة",e7:"الحب والعلاقات",e8:"مستقبل التعليم",e9:"التجربة الكبرى",e10:"الإرث",c3priv:"يمكن المشاركة دون التصوير. الخصوصية والموافقة والمناطق الخالية من الكاميرات محمية.",
+c4cap:"المؤسسون",c4h:"من نبحث عنهم",r1t:"صنّاع المغامرة",r1d:"السفر والاستكشاف والإبحار والطبيعة وأنماط الحياة البديلة.",r2t:"قادة الفكر",r2d:"الفلسفة وعلم النفس والروحانية وتطوير الذات.",r3t:"فنانون وكتّاب",r3d:"الفنون البصرية والأدب والموسيقى والسينما والأداء.",r4t:"مبتكرون",r4d:"الذكاء الاصطناعي والعلوم والتقنية وريادة الأعمال والاستدامة.",r5t:"معلمون",r5d:"من يصنعون الدورات وورش العمل والسلاسل التعليمية.",r6t:"صنّاع الوثائقيات",r6d:"من يستطيعون تحويل الجزيرة إلى قصة عالمية.",c4earn:"يكسب المبدعون من الدورات والرعايات وتراخيص الوثائقيات والفعاليات والكتب والإحالات والبرامج الأصلية، مع حسابات وعقود شفافة. ما تبدعه بنفسك يبقى ملكك.",
+c5cap:"انضم",c5h:"ثلاث طرق لتكون جزءاً من أركاديا",t1d:"365 يوماً على الجزيرة: سكن، استوديوهات مشتركة، أكاديمية ومختبرات، برامج أصلية، عضوية تأسيسية وحق التصويت.",t1p:"25,000 يورو · عضوية المواطنة",t2n:"مبدعون ضيوف",t2d:"إقامة من 7 إلى 30 يوماً مع استوديو وبرنامج مخصص وفرصة لبث تجربتك.",t2p:"شروط يُتفق عليها فردياً",t3n:"السفراء",t3d:"12 شهراً للترويج لأركاديا دون العيش فيها: صفة رسمية، عمولات إحالة، فعاليات ووصول إلى المنصة.",t3p:"عمولة على العضويات",c5partner:"شركة بث أو إعلام؟ نبحث عن شريك استراتيجي لإطلاق قناة أركاديا الرسمية.",fTier:"أنا مهتم بـ",o4:"شراكة إعلامية أو بث",fWhy:"ما الذي تقدمه لأركاديا",
+q1:"هل سأُصوَّر طوال الوقت؟",a1:"لا. التصوير يتطلب الموافقة دائماً، وفي الجزيرة مناطق بلا كاميرات.",q2:"لمن تعود ملكية ما أبدعه؟",a2:"أعمالك السابقة وما تبدعه وحدك يبقى ملكك. الإنتاجات المشتركة والتراخيص تحددها عقود واضحة.",q3:"أين تقع الجزيرة؟",a3:"في البحر المتوسط. يُكشف موقعها الدقيق للمواطنين المؤسسين."},
+hi:{heroH:"दुनिया तुम्हारा स्टूडियो है।",heroSub:"100 संस्थापक नागरिक। 365 दिन। एक द्वीप। एक वैश्विक चैनल। अनगिनत कहानियाँ।",cta1:"संस्थापक 100 में शामिल हों",cta2:"विज़न जानें",
+c1cap:"प्रयोग",c1h:"दुनिया का पहला लाइव-प्रसारित दर्शन और रचनात्मकता प्रयोग",c1q:"“आर्काडिया केवल कंटेंट बनाने मत आओ, कुछ ऐसा सार्थक रचने आओ जो तुम्हारे सोशल मीडिया करियर से भी आगे टिके।”",c1p1:"आर्काडिया क्रिएटर्स, कलाकारों, दार्शनिकों, वैज्ञानिकों, उद्यमियों, शिक्षकों और खोजियों को एक नए समाज की संस्थापक आवाज़ बनने के लिए आमंत्रित करता है: जीना, सीखना, रचना, सिखाना और अपना अनुभव दुनिया से साझा करना।",pIslD:"वह जगह जहाँ लोग जीते, प्रयोग करते, रचते और मिलते हैं।",pMedD:"स्ट्रीमिंग चैनल, डॉक्यूमेंट्री निर्माण, क्रिएटर नेटवर्क और प्रकाशन।",pAcaD:"दर्शन विद्यालय, अध्ययन कार्यक्रम, रचनात्मक प्रयोगशालाएँ और पुस्तकालय।",c1p2:"द्वीप अनुभव रचता है। मीडिया उन्हें दुनिया तक पहुँचाता है। अकादमी उन्हें सबके काम आने वाले ज्ञान में बदलती है।",
+c2cap:"Arkadia One",c2h:"सब कुछ एक प्लेटफ़ॉर्म पर",c2p:"हर स्तंभ एक आवाज़ बनता है। हर क्रिएटर का साझा तंत्र में अपना प्रोफ़ाइल और चैनल है, और द्वीप पर बनी हर चीज़ एक साझा ज्ञान-पुस्तकालय बढ़ाती है।",a1d:"द्वीप से लाइव प्रसारण देखें।",a2d:"दर्शन, विज्ञान, कला और व्यावहारिक कौशल सीखें।",a3d:"किताबें, निबंध और शोध लिखें और प्रकाशित करें।",a4d:"मिलें, चर्चा करें, सहयोग करें और प्रोजेक्ट बनाएँ।",a5d:"ऑनलाइन और प्रत्यक्ष कार्यक्रमों में भाग लें।",
+c3cap:"सीरीज़",c3h:"Life on Arkadia",c3p:"जीने का नया तरीका बनाते 100 लोगों पर एक निरंतर डॉक्यूमेंट्री। रोज़ लाइव, साप्ताहिक कार्यक्रम, मासिक डॉक्यूमेंट्री और साल के अंत में एक फ़ीचर फ़िल्म।",e1:"आगमन",e2:"नया समाज",e3:"सुख का दर्शन",e4:"पैसा और आज़ादी",e5:"कला और मानवीय अभिव्यक्ति",e6:"तकनीक और प्रकृति",e7:"प्रेम और रिश्ते",e8:"शिक्षा का भविष्य",e9:"महान प्रयोग",e10:"विरासत",c3priv:"बिना फ़िल्माए भी भाग लिया जा सकता है। निजता, सहमति और कैमरा-मुक्त क्षेत्र सुरक्षित हैं।",
+c4cap:"संस्थापक",c4h:"हम किसे खोज रहे हैं",r1t:"एडवेंचर क्रिएटर्स",r1d:"यात्रा, खोज, नौकायन, प्रकृति और वैकल्पिक जीवनशैली।",r2t:"विचारक",r2d:"दर्शन, मनोविज्ञान, आध्यात्मिकता और व्यक्तिगत विकास।",r3t:"कलाकार और लेखक",r3d:"दृश्य कला, साहित्य, संगीत, फ़िल्म और प्रदर्शन।",r4t:"नवप्रवर्तक",r4d:"एआई, विज्ञान, तकनीक, उद्यमिता और स्थिरता।",r5t:"शिक्षक",r5d:"जो कोर्स, वर्कशॉप और शैक्षिक सीरीज़ बनाते हैं।",r6t:"डॉक्यूमेंट्री निर्माता",r6d:"जो द्वीप को एक अंतरराष्ट्रीय कहानी बना सकते हैं।",c4earn:"क्रिएटर्स कोर्स, स्पॉन्सरशिप, डॉक्यूमेंट्री लाइसेंस, लाइव इवेंट, किताबें, रेफ़रल और मूल शो से कमाते हैं, पारदर्शी खातों और अनुबंधों के साथ। जो तुम स्वयं रचते हो, वह तुम्हारा रहता है।",
+c5cap:"जुड़ें",c5h:"आर्काडिया का हिस्सा बनने के तीन रास्ते",t1d:"द्वीप पर 365 दिन: आवास, साझा स्टूडियो, अकादमी और प्रयोगशालाएँ, मूल शो, संस्थापक सदस्यता और मताधिकार।",t1p:"€25,000 · नागरिक सदस्यता",t2n:"अतिथि क्रिएटर्स",t2d:"7 से 30 दिन का रेज़िडेंसी, स्टूडियो, समर्पित कार्यक्रम और अपना अनुभव प्रसारित करने का मौका।",t2p:"शर्तें व्यक्तिगत रूप से तय",t3n:"राजदूत",t3d:"12 महीने वहाँ रहे बिना आर्काडिया का प्रचार: आधिकारिक दर्जा, रेफ़रल शुल्क, कार्यक्रम और प्लेटफ़ॉर्म पहुँच।",t3p:"सदस्यता पर कमीशन",c5partner:"स्ट्रीमिंग या मीडिया कंपनी? हम आर्काडिया का आधिकारिक चैनल शुरू करने के लिए रणनीतिक साझेदार खोज रहे हैं।",fTier:"मेरी रुचि है",o4:"मीडिया या स्ट्रीमिंग साझेदारी",fWhy:"आप आर्काडिया में क्या लाएँगे",
+q1:"क्या मुझे हर समय फ़िल्माया जाएगा?",a1:"नहीं। फ़िल्मांकन हमेशा सहमति से होता है, और द्वीप पर कैमरा-मुक्त क्षेत्र हैं।",q2:"मेरी रचना किसकी होगी?",a2:"आपके मौजूदा काम और स्वतंत्र रचनाएँ आपकी रहेंगी। संयुक्त प्रोडक्शन और लाइसेंस स्पष्ट अनुबंधों से तय होते हैं।",q3:"द्वीप कहाँ है?",a3:"भूमध्य सागर में। सटीक स्थान संस्थापक नागरिकों को बताया जाता है।"},
+ko:{heroH:"세상이 당신의 스튜디오입니다.",heroSub:"100명의 창립 시민. 365일. 하나의 섬. 하나의 글로벌 채널. 셀 수 없는 이야기.",cta1:"창립 100인에 합류하기",cta2:"비전 살펴보기",
+c1cap:"실험",c1h:"세계 최초로 생중계되는 철학과 창작의 실험",c1q:"“아르카디아에는 콘텐츠만 만들러 오지 마세요. SNS 경력보다 오래 남을 의미 있는 것을 만들러 오세요.”",c1p1:"아르카디아는 크리에이터, 예술가, 철학자, 과학자, 기업가, 교육자, 탐험가를 새로운 사회의 창립 목소리로 초대합니다. 살고, 배우고, 만들고, 가르치며 그 경험을 세상과 나누도록.",pIslD:"사람들이 살고, 실험하고, 창작하고, 만나는 곳.",pMedD:"스트리밍 채널, 다큐멘터리 제작, 크리에이터 네트워크와 출판.",pAcaD:"철학 학교, 학습 프로그램, 창작 연구소와 지식 도서관.",c1p2:"섬은 경험을 만들고, 미디어는 그것을 세상과 나누며, 아카데미는 그것을 모두가 쓸 수 있는 지식으로 바꿉니다.",
+c2cap:"Arkadia One",c2h:"모든 것을 하나의 플랫폼에",c2p:"기둥 하나하나가 목소리가 됩니다. 모든 크리에이터는 공동 생태계 안에 자신의 프로필과 채널을 갖고, 섬에서 만들어진 모든 것이 공유 지식 도서관을 키웁니다.",a1d:"섬에서 보내는 생중계를 시청하세요.",a2d:"철학, 과학, 예술과 실용 기술을 배우세요.",a3d:"책, 에세이, 연구를 쓰고 출판하세요.",a4d:"만나고, 토론하고, 협업하며 프로젝트를 만드세요.",a5d:"온라인과 현장 행사에 참여하세요.",
+c3cap:"시리즈",c3h:"Life on Arkadia",c3p:"다른 삶의 방식을 만들어 가는 100명을 담은 연속 다큐멘터리. 매일 라이브, 주간 프로그램, 월간 다큐멘터리, 연말 장편 영화.",e1:"도착",e2:"새로운 사회",e3:"행복의 철학",e4:"돈과 자유",e5:"예술과 인간의 표현",e6:"기술과 자연",e7:"사랑과 관계",e8:"교육의 미래",e9:"위대한 실험",e10:"유산",c3priv:"촬영되지 않고도 참여할 수 있습니다. 사생활, 동의, 촬영 금지 구역은 보호됩니다.",
+c4cap:"창립자들",c4h:"우리가 찾는 사람",r1t:"어드벤처 크리에이터",r1d:"여행, 탐험, 항해, 자연, 대안적 라이프스타일.",r2t:"사상가",r2d:"철학, 심리학, 영성, 자기 계발.",r3t:"예술가와 작가",r3d:"시각 예술, 문학, 음악, 영화, 퍼포먼스.",r4t:"혁신가",r4d:"AI, 과학, 기술, 창업, 지속 가능성.",r5t:"교육자",r5d:"강좌, 워크숍, 교육 시리즈를 만드는 사람.",r6t:"다큐멘터리 제작자",r6d:"이 섬을 세계적인 이야기로 만들 수 있는 사람.",c4earn:"크리에이터는 강좌, 후원, 다큐멘터리 라이선스, 라이브 행사, 책, 추천, 오리지널 프로그램으로 수익을 얻으며, 수익 계정과 계약은 투명합니다. 혼자 만든 것은 당신의 것입니다.",
+c5cap:"참여하기",c5h:"아르카디아와 함께하는 세 가지 방법",t1d:"섬에서의 365일: 숙소, 공유 스튜디오, 아카데미와 연구소, 오리지널 프로그램, 창립 회원 자격과 투표권.",t1p:"25,000유로 · 시민 멤버십",t2n:"게스트 크리에이터",t2d:"7~30일 레지던시. 스튜디오, 전용 프로그램, 경험을 방송할 기회.",t2p:"조건은 개별 협의",t3n:"앰배서더",t3d:"섬에 살지 않고 12개월간 아르카디아를 알리기: 공식 자격, 추천 수수료, 행사, 플랫폼 이용.",t3p:"멤버십 추천 수수료",c5partner:"스트리밍 또는 미디어 기업이신가요? 아르카디아 공식 채널을 함께 열 전략적 파트너를 찾고 있습니다.",fTier:"관심 있는 항목",o4:"미디어 또는 스트리밍 파트너십",fWhy:"아르카디아에 가져올 것",
+q1:"항상 촬영되나요?",a1:"아니요. 촬영은 항상 동의가 필요하며, 섬에는 촬영 금지 구역이 있습니다.",q2:"내가 만든 것은 누구의 것인가요?",a2:"기존 작품과 독자적으로 만든 것은 당신의 것입니다. 공동 제작과 라이선스는 명확한 계약으로 정합니다.",q3:"섬은 어디에 있나요?",a3:"지중해에 있습니다. 정확한 위치는 창립 시민에게만 공개됩니다."}
+};
+
 const LANG_NAMES={en:"English",fr:"Français",es:"Español",de:"Deutsch",it:"Italiano",pt:"Português",ru:"Русский",zh:"中文",ja:"日本語",ar:"العربية",hi:"हिन्दी",ko:"한국어"};
 
 (function(){
@@ -360,7 +471,7 @@ const LANG_NAMES={en:"English",fr:"Français",es:"Español",de:"Deutsch",it:"Ita
 const sel=document.getElementById('lang');
 Object.keys(LANG_NAMES).forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=LANG_NAMES[c];sel.appendChild(o);});
 let cur='en';
-function T(k){const i=KEYS.indexOf(k);return (LANGS[cur]&&LANGS[cur][i])||LANGS.en[i];}
+function T(k){if(T2[cur]&&T2[cur][k])return T2[cur][k];const i=KEYS.indexOf(k);return (LANGS[cur]&&LANGS[cur][i])||LANGS.en[i]||(T2.en[k])||k;}
 window.__T=T;
 function apply(code){
   cur=LANGS[code]?code:'en'; sel.value=cur;
